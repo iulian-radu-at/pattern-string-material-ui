@@ -83,3 +83,7 @@ export default App;
 ### 1.0.3
 
 - Changed the type of returned argument for type in onChange from string to enum
+
+### 1.0.4
+
+- Fixed the export of TYPE
