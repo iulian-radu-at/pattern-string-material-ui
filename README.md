@@ -83,3 +83,7 @@ export default App;
 ### 1.0.1
 
 - Changed the type of returned argument for onChange
+
+### 1.0.2
+
+- Fixed the typescript definition for the new onChange
