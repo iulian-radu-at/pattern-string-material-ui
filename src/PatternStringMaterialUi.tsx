@@ -80,7 +80,7 @@ class PatternStringMaterialUi extends React.Component<
         disabled={isInputEnabled === false}
         fullWidth={true}
         onChange={this.handleChangeInput}
-        value={this.state.value}
+        value={isInputEnabled ? this.state.value : ""}
       />
     );
   }

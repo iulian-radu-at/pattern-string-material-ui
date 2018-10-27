@@ -31,18 +31,16 @@ class OptionsPatternString {
   }
 
   public static getType(option?: string) {
-    const index: number = findIndex(optionsPatternString, option);
-
-    switch (index) {
-      case 0:
+    switch (option) {
+      case optionsPatternString[0]:
         return TYPE.CAN_BE_ANY;
-      case 1:
+      case optionsPatternString[1]:
         return TYPE.IS_EXACT;
-      case 2:
+      case optionsPatternString[2]:
         return TYPE.START_WITH;
-      case 3:
+      case optionsPatternString[3]:
         return TYPE.ENDS_WITH;
-      case 4:
+      case optionsPatternString[4]:
         return TYPE.CONTAINS;
       default:
         return TYPE.CAN_BE_ANY;

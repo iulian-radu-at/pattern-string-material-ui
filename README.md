@@ -80,10 +80,6 @@ export default App;
 
 - pattern-string-material-ui is made publicly available
 
-### 1.0.1
+### 1.0.3
 
-- Changed the type of returned argument for onChange
-
-### 1.0.2
-
-- Fixed the typescript definition for the new onChange
+- Changed the type of returned argument for type in onChange from string to enum
