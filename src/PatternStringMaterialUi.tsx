@@ -129,4 +129,5 @@ interface PatternStringMaterialUiProps {
   value?: string;
 }
 
+export { TYPE };
 export default PatternStringMaterialUi;
