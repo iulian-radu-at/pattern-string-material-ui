@@ -52,7 +52,7 @@ The base component which allows to create read-only or creatable select componen
 
 ```js
 import * as React from "react";
-import PatternStringMaterialUi from "pattern-string-material-ui";
+import PatternStringMaterialUi, { TYPE } from "pattern-string-material-ui";
 import { ColorsSelect } from "react-select-material-ui";
 
 class App extends React.Component {
@@ -64,7 +64,7 @@ class App extends React.Component {
     );
   }
 
-  handleChangePattern = (type: string, value: string) => {
+  handleChangePattern = (type: TYPE, value: string) => {
     console.log({ type, value });
   };
 }
