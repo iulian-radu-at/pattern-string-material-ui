@@ -1,6 +1,6 @@
 {
   "name": "pattern-string-material-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A material-ui component which looks like a TEXTFIELD grouping together a dropdown and an input components",
   "main": "lib/index.js",
   "sideEffects": false,

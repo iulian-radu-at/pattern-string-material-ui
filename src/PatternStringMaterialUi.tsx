@@ -6,6 +6,8 @@ import InputLabel from "@material-ui/core/InputLabel/InputLabel";
 import { Dictionary, isEmpty } from "lodash";
 import { SingleSelect } from "react-select-material-ui";
 
+import OptionsPatternString, { TYPE } from "./OptionsPatternString";
+
 const styles: Dictionary<React.CSSProperties> = {
   checkbox: {
     padding: "0 5px 0 0"
@@ -22,14 +24,6 @@ const styles: Dictionary<React.CSSProperties> = {
   }
 };
 
-const optionsPatternString = [
-  "can be any",
-  "is exact",
-  "start with",
-  "ends with",
-  "contains"
-];
-
 class PatternStringMaterialUi extends React.Component<
   PatternStringMaterialUiProps,
   PatternStringMaterialUiState
@@ -37,8 +31,10 @@ class PatternStringMaterialUi extends React.Component<
   constructor(props: PatternStringMaterialUiProps) {
     super(props);
 
+    const type: TYPE = props.type || TYPE.CAN_BE_ANY;
+
     this.state = {
-      type: props.type || optionsPatternString[0],
+      type,
       value: props.value || ""
     };
   }
@@ -69,22 +65,22 @@ class PatternStringMaterialUi extends React.Component<
   private renderPattern() {
     return (
       <SingleSelect
-        value={this.props.type || optionsPatternString[0]}
-        options={optionsPatternString}
+        value={OptionsPatternString.getOption(this.state.type)}
+        options={OptionsPatternString.getOptions()}
         onChange={this.handleChangePattern}
       />
     );
   }
 
   private renderInput() {
-    const isInputEnabled: boolean = this.state.type !== optionsPatternString[0];
+    const isInputEnabled: boolean = this.state.type !== TYPE.CAN_BE_ANY;
 
     return (
       <Input
         disabled={isInputEnabled === false}
         fullWidth={true}
         onChange={this.handleChangeInput}
-        value={this.props.value}
+        value={this.state.value}
       />
     );
   }
@@ -99,7 +95,9 @@ class PatternStringMaterialUi extends React.Component<
     return <FormHelperText>{helperText}</FormHelperText>;
   }
 
-  private handleChangePattern = (type: string) => {
+  private handleChangePattern = (option: string) => {
+    const type: TYPE = OptionsPatternString.getType(option);
+
     this.setState({
       type
     });
@@ -117,7 +115,7 @@ class PatternStringMaterialUi extends React.Component<
 }
 
 interface PatternStringMaterialUiState {
-  type?: string;
+  type?: TYPE;
   value?: string;
 }
 
@@ -125,9 +123,9 @@ interface PatternStringMaterialUiProps {
   helperText?: string;
   id?: string;
   label?: string;
-  onChange: (type?: string, value?: string) => void;
+  onChange: (type?: TYPE, value?: string) => void;
   style?: React.CSSProperties;
-  type?: "can be any" | "is exact" | "start with" | "ends with" | "contains";
+  type?: TYPE;
   value?: string;
 }
 

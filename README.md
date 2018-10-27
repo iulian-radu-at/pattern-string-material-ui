@@ -10,23 +10,25 @@ The component accepts the props defined bellow in the table.
 
 ### Props accepted by PatternStringMaterialUi
 
-| Name       | Type                                    | Required | Default    | Description                                                                       |
-| ---------- | --------------------------------------- | -------- | ---------- | --------------------------------------------------------------------------------- |
-| helperText | string                                  | no       | undefined  | The helper text of the field                                                      |
-| id         | string                                  | no       | undefined  | The id of the field                                                               |
-| label      | string                                  | no       | undefined  | The label of the field                                                            |
-| onChange   | (type?: string, value?: string) => void | yes      | -          | The callback function called when the value of the select or the input is changed |
-| style      | CSSProperties                           | no       | undefined  | The style applied to the field                                                    |
-| type       | string\*                                | no       | can be any | It is one of the following option                                                 |
-| value      | string                                  | no       | undefined  | It is the value of the input field                                                |
+| Name       | Type                                  | Required | Default    | Description                                                                       |
+| ---------- | ------------------------------------- | -------- | ---------- | --------------------------------------------------------------------------------- |
+| helperText | string                                | no       | undefined  | The helper text of the field                                                      |
+| id         | string                                | no       | undefined  | The id of the field                                                               |
+| label      | string                                | no       | undefined  | The label of the field                                                            |
+| onChange   | (type?: enum, value?: string) => void | yes      | -          | The callback function called when the value of the select or the input is changed |
+| style      | CSSProperties                         | no       | undefined  | The style applied to the field                                                    |
+| type       | enum                                  | no       | can be any | It is one of the following enums                                                  |
+| value      | string                                | no       | undefined  | It is the value of the input field                                                |
 
 ### Values valid for type (they are also displayed in the dropdown)
 
-- can be any (when it is selected, the input field is disabled)
-- is exact
-- start with
-- ends with
-- contains
+| Enum       | Option in dropdown | Note                                             |
+| ---------- | ------------------ | ------------------------------------------------ |
+| CAN_BE_ANY | can be any         | when it is selected, the input field is disabled |
+| IS_EXACT   | is exact           |                                                  |
+| START_WITH | start with         |                                                  |
+| ENDS_WITH  | ends with          |                                                  |
+| CONTAINS   | contains           |                                                  |
 
 ---
 
@@ -77,3 +79,7 @@ export default App;
 ### 1.0.0
 
 - pattern-string-material-ui is made publicly available
+
+### 1.0.1
+
+- Changed the type of returned argument for onChange
