@@ -39,6 +39,7 @@ The component accepts the props defined bellow in the table.
 |                          1.0.x |    3.2.0    | 16.5.2 |
 |                          1.1.x |    3.6.0    | 16.6.3 |
 |                          1.2.x |    3.9.2    | 16.8.1 |
+|                          1.3.x |    3.9.3    | 16.8.6 |
 
 ### About versioning schema used for PatternStringMaterialUi
 
@@ -95,5 +96,9 @@ export default App;
 - Updated the react and material-ui packages
 
 ### 1.2.0
+
+- Updated packages
+
+### 1.3.0
 
 - Updated packages
