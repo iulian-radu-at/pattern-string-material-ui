@@ -11,7 +11,7 @@ The component accepts the props defined bellow in the table.
 ### Props accepted by PatternStringMaterialUi
 
 | Name       | Type                                  | Required | Default    | Description                                                                       |
-| ---------- | ------------------------------------- | -------- | ---------- | --------------------------------------------------------------------------------- |
+|------------|---------------------------------------|----------|------------|-----------------------------------------------------------------------------------|
 | helperText | string                                | no       | undefined  | The helper text of the field                                                      |
 | id         | string                                | no       | undefined  | The id of the field                                                               |
 | label      | string                                | no       | undefined  | The label of the field                                                            |
@@ -23,7 +23,7 @@ The component accepts the props defined bellow in the table.
 ### Values valid for type (they are also displayed in the dropdown)
 
 | Enum       | Option in dropdown | Note                                             |
-| ---------- | ------------------ | ------------------------------------------------ |
+|------------|--------------------|--------------------------------------------------|
 | CAN_BE_ANY | can be any         | when it is selected, the input field is disabled |
 | IS_EXACT   | is exact           |                                                  |
 | START_WITH | start with         |                                                  |
@@ -35,11 +35,12 @@ The component accepts the props defined bellow in the table.
 ## Versions
 
 | PatternStringMaterialUi _uses_ | Material-ui | React  |
-| -----------------------------: | :---------: | :----: |
+|-------------------------------:|:-----------:|:------:|
 |                          1.0.x |    3.2.0    | 16.5.2 |
 |                          1.1.x |    3.6.0    | 16.6.3 |
 |                          1.2.x |    3.9.2    | 16.8.1 |
 |                          1.3.x |    3.9.3    | 16.8.6 |
+|                          2.0.x |    4.0.2    | 16.8.6 |
 
 ### About versioning schema used for PatternStringMaterialUi
 
@@ -100,5 +101,9 @@ export default App;
 - Updated packages
 
 ### 1.3.0
+
+- Updated packages
+
+### 2.0.0
 
 - Updated packages
