@@ -1,20 +1,18 @@
-import * as React from "react";
-
-import FormHelperText from "@material-ui/core/FormHelperText/FormHelperText";
-import Input from "@material-ui/core/Input/Input";
-import InputLabel from "@material-ui/core/InputLabel/InputLabel";
-import { Dictionary, isEmpty } from "lodash";
-import { SingleSelect } from "react-select-material-ui";
-
-import OptionsPatternString, { TYPE } from "./OptionsPatternString";
+import * as React from 'react';
+import FormHelperText from '@material-ui/core/FormHelperText/FormHelperText';
+import Input from '@material-ui/core/Input/Input';
+import InputLabel from '@material-ui/core/InputLabel/InputLabel';
+import OptionsPatternString, { TYPE } from './OptionsPatternString';
+import { Dictionary, isEmpty } from 'lodash';
+import { SingleSelect } from 'react-select-material-ui';
 
 const styles: Dictionary<React.CSSProperties> = {
   checkbox: {
-    padding: "0 5px 0 0"
+    padding: '0 5px 0 0'
   },
   container: {
-    alignItems: "center",
-    display: "flex"
+    alignItems: 'center',
+    display: 'flex'
   },
   itemLeft: {
     flexGrow: 1
@@ -24,18 +22,15 @@ const styles: Dictionary<React.CSSProperties> = {
   }
 };
 
-class PatternStringMaterialUi extends React.Component<
-  PatternStringMaterialUiProps,
-  PatternStringMaterialUiState
-> {
+class PatternStringMaterialUi extends React.Component<PatternStringMaterialUiProps, PatternStringMaterialUiState> {
   constructor(props: PatternStringMaterialUiProps) {
     super(props);
 
-    const type: TYPE = props.type || TYPE.CAN_BE_ANY;
+    const type: TYPE = props.type || props.defaultType || TYPE.CAN_BE_ANY;
 
     this.state = {
       type,
-      value: props.value || ""
+      value: props.value || props.defaultValue || ''
     };
   }
 
@@ -80,7 +75,7 @@ class PatternStringMaterialUi extends React.Component<
         disabled={isInputEnabled === false}
         fullWidth={true}
         onChange={this.handleChangeInput}
-        value={isInputEnabled ? this.state.value : ""}
+        value={isInputEnabled ? this.state.value : ''}
       />
     );
   }
@@ -98,18 +93,24 @@ class PatternStringMaterialUi extends React.Component<
   private handleChangePattern = (option: string) => {
     const type: TYPE = OptionsPatternString.getType(option);
 
-    this.setState({
-      type
-    });
+    if (this.props.type === undefined) {
+      this.setState({
+        type
+      });
+    }
 
     this.props.onChange(type, this.state.value);
   };
 
   private handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value: string = event.target.value;
-    this.setState({
-      value
-    });
+
+    if (this.props.value === undefined) {
+      this.setState({
+        value
+      });
+    }
+
     this.props.onChange(this.state.type, value);
   };
 }
@@ -120,6 +121,8 @@ interface PatternStringMaterialUiState {
 }
 
 interface PatternStringMaterialUiProps {
+  defaultType?: TYPE;
+  defaultValue?: string;
   helperText?: string;
   id?: string;
   label?: string;

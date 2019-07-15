@@ -4,21 +4,27 @@ A material-ui component which looks like a TEXTFIELD grouping together a dropdow
 
 ---
 
+## Demo
+
+You can access the storybook for this component [here](https://iulian-radu-at.github.io/pattern-string-material-ui/).
+
 ## Props
 
 The component accepts the props defined bellow in the table.
 
 ### Props accepted by PatternStringMaterialUi
 
-| Name       | Type                                  | Required | Default    | Description                                                                       |
-|------------|---------------------------------------|----------|------------|-----------------------------------------------------------------------------------|
-| helperText | string                                | no       | undefined  | The helper text of the field                                                      |
-| id         | string                                | no       | undefined  | The id of the field                                                               |
-| label      | string                                | no       | undefined  | The label of the field                                                            |
-| onChange   | (type?: enum, value?: string) => void | yes      | -          | The callback function called when the value of the select or the input is changed |
-| style      | CSSProperties                         | no       | undefined  | The style applied to the field                                                    |
-| type       | enum                                  | no       | can be any | It is one of the following enums                                                  |
-| value      | string                                | no       | undefined  | It is the value of the input field                                                |
+| Name         | Type                                  | Required | Default    | Description                                                                       |
+|--------------|---------------------------------------|----------|------------|-----------------------------------------------------------------------------------|
+| defaultType  | enum                                  | no       | CAN_BE_ANY | It is the initial type and it is one of the enums from bellow                     |
+| defaultValue | string                                | no       | undefined  | It is the initial value of the input field                                        |
+| helperText   | string                                | no       | undefined  | The helper text of the field                                                      |
+| id           | string                                | no       | undefined  | The id of the field                                                               |
+| label        | string                                | no       | undefined  | The label of the field                                                            |
+| onChange     | (type?: enum, value?: string) => void | yes      | -          | The callback function called when the value of the select or the input is changed |
+| style        | CSSProperties                         | no       | undefined  | The style applied to the field                                                    |
+| type         | enum                                  | no       | CAN_BE_ANY | It is the valu of type and it is one of the enums from bellow                     |
+| value        | string                                | no       | undefined  | It is the value of the input field                                                |
 
 ### Values valid for type (they are also displayed in the dropdown)
 
@@ -42,6 +48,7 @@ The component accepts the props defined bellow in the table.
 |                          1.3.x |    3.9.3    | 16.8.6 |
 |                          2.0.x |    4.0.2    | 16.8.6 |
 |                          2.1.x |    4.2.0    | 16.8.6 |
+|                          3.0.x |    4.2.0    | 16.8.6 |
 
 ### About versioning schema used for PatternStringMaterialUi
 
@@ -111,4 +118,11 @@ export default App;
 
 ### 2.1.0
 
+- Updated packages
+
+### 3.0.0
+
+- The behavior of the old type and value props are now covered by the new defaultType and defaultValue props
+- The type and value make the component (semi)controlled (semi if only one of them is set)
+- Added a storybook for this component
 - Updated packages
