@@ -49,6 +49,7 @@ The component accepts the props defined bellow in the table.
 |                          2.0.x |    4.0.2    | 16.8.6 |
 |                          2.1.x |    4.2.0    | 16.8.6 |
 |                          3.0.x |    4.2.0    | 16.8.6 |
+|                          3.1.x |    4.3.3    | 16.8.6 |
 
 ### About versioning schema used for PatternStringMaterialUi
 
