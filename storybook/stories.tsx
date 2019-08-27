@@ -29,6 +29,7 @@ const showSelectedValue = (id: string) => (type?: TYPE, value?: string) =>
   (document.getElementById(id).textContent = `${type2text(type)} ${value}`);
 
 storiesOf('PatternStringMaterialUi', module)
+  .addParameters({ options: { showPanel: false } })
   .add('the minimal component', () => (
     <div>
       <PatternStringMaterialUi onChange={doNothing} />
