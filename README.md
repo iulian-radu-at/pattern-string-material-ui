@@ -50,6 +50,7 @@ The component accepts the props defined bellow in the table.
 |                          2.1.x |    4.2.0    | 16.8.6 |
 |                          3.0.x |    4.2.0    | 16.8.6 |
 |                          3.1.x |    4.3.3    | 16.8.6 |
+|                          3.2.x |    4.9.0    | 16.9.0 |
 
 ### About versioning schema used for PatternStringMaterialUi
 
@@ -126,4 +127,12 @@ export default App;
 - The behavior of the old type and value props are now covered by the new defaultType and defaultValue props
 - The type and value make the component (semi)controlled (semi if only one of them is set)
 - Added a storybook for this component
+- Updated packages
+
+### 3.1.0
+
+- Updated packages
+
+### 3.2.0
+
 - Updated packages
