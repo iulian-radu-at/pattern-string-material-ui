@@ -1,4 +1,4 @@
-# pattern-string-material-ui
+# pattern-string-material-ui ![Weekly downloads](https://img.shields.io/npm/dw/pattern-string-material-ui 'Weekly downloads')
 
 A material-ui component which looks like a TEXTFIELD grouping together a dropdown and an input components
 
@@ -15,7 +15,7 @@ The component accepts the props defined bellow in the table.
 ### Props accepted by PatternStringMaterialUi
 
 | Name         | Type                                  | Required | Default    | Description                                                                       |
-|--------------|---------------------------------------|----------|------------|-----------------------------------------------------------------------------------|
+| ------------ | ------------------------------------- | -------- | ---------- | --------------------------------------------------------------------------------- |
 | defaultType  | enum                                  | no       | CAN_BE_ANY | It is the initial type and it is one of the enums from bellow                     |
 | defaultValue | string                                | no       | undefined  | It is the initial value of the input field                                        |
 | helperText   | string                                | no       | undefined  | The helper text of the field                                                      |
@@ -29,7 +29,7 @@ The component accepts the props defined bellow in the table.
 ### Values valid for type (they are also displayed in the dropdown)
 
 | Enum       | Option in dropdown | Note                                             |
-|------------|--------------------|--------------------------------------------------|
+| ---------- | ------------------ | ------------------------------------------------ |
 | CAN_BE_ANY | can be any         | when it is selected, the input field is disabled |
 | IS_EXACT   | is exact           |                                                  |
 | START_WITH | start with         |                                                  |
@@ -41,7 +41,7 @@ The component accepts the props defined bellow in the table.
 ## Versions
 
 | PatternStringMaterialUi _uses_ | Material-ui | React  |
-|-------------------------------:|:-----------:|:------:|
+| -----------------------------: | :---------: | :----: |
 |                          1.0.x |    3.2.0    | 16.5.2 |
 |                          1.1.x |    3.6.0    | 16.6.3 |
 |                          1.2.x |    3.9.2    | 16.8.1 |
@@ -51,6 +51,7 @@ The component accepts the props defined bellow in the table.
 |                          3.0.x |    4.2.0    | 16.8.6 |
 |                          3.1.x |    4.3.3    | 16.8.6 |
 |                          3.2.x |    4.9.0    | 16.9.0 |
+|                          3.3.x |    4.9.7    | 16.9.0 |
 
 ### About versioning schema used for PatternStringMaterialUi
 
@@ -65,9 +66,9 @@ The component accepts the props defined bellow in the table.
 The base component which allows to create read-only or creatable select components for selecting only one or more values:
 
 ```js
-import * as React from "react";
-import PatternStringMaterialUi, { TYPE } from "pattern-string-material-ui";
-import { ColorsSelect } from "react-select-material-ui";
+import * as React from 'react';
+import PatternStringMaterialUi, { TYPE } from 'pattern-string-material-ui';
+import { ColorsSelect } from 'react-select-material-ui';
 
 class App extends React.Component {
   render() {
@@ -136,3 +137,8 @@ export default App;
 ### 3.2.0
 
 - Updated packages
+
+### 3.3.0
+
+- Updated packages
+- Moved from npm to yarn
