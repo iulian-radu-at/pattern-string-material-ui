@@ -1,4 +1,4 @@
-# pattern-string-material-ui ![Weekly downloads](https://img.shields.io/npm/dw/pattern-string-material-ui 'Weekly downloads')
+# pattern-string-material-ui ![Weekly downloads](https://img.shields.io/npm/dw/pattern-string-material-ui "Weekly downloads")
 
 A material-ui component which looks like a TEXTFIELD grouping together a dropdown and an input components
 
@@ -52,6 +52,7 @@ The component accepts the props defined bellow in the table.
 |                          3.1.x |    4.3.3    | 16.8.6 |
 |                          3.2.x |    4.9.0    | 16.9.0 |
 |                          3.3.x |    4.9.7    | 16.9.0 |
+|                          3.4.x |   4.10.2    | 16.9.0 |
 
 ### About versioning schema used for PatternStringMaterialUi
 
@@ -66,15 +67,18 @@ The component accepts the props defined bellow in the table.
 The base component which allows to create read-only or creatable select components for selecting only one or more values:
 
 ```js
-import * as React from 'react';
-import PatternStringMaterialUi, { TYPE } from 'pattern-string-material-ui';
-import { ColorsSelect } from 'react-select-material-ui';
+import * as React from "react";
+import PatternStringMaterialUi, { TYPE } from "pattern-string-material-ui";
+import { ColorsSelect } from "react-select-material-ui";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <PatternStringMaterialUi label="Name" onChange={this.handleChangePattern} />
+        <PatternStringMaterialUi
+          label="Name"
+          onChange={this.handleChangePattern}
+        />
       </div>
     );
   }
@@ -142,3 +146,7 @@ export default App;
 
 - Updated packages
 - Moved from npm to yarn
+
+### 3.4.0
+
+- Updated packages
