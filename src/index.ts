@@ -1,1 +1,1 @@
-export * from "./PatternStringMaterialUi";
+export { default, TYPE } from "./PatternStringMaterialUi";
