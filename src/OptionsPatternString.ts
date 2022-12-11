@@ -1,11 +1,9 @@
-import { findIndex } from "lodash";
-
 const optionsPatternString = [
-  "can be any",
-  "is exact",
-  "start with",
-  "ends with",
-  "contains"
+  'can be any',
+  'is exact',
+  'start with',
+  'ends with',
+  'contains',
 ];
 
 class OptionsPatternString {
@@ -53,7 +51,7 @@ export enum TYPE {
   IS_EXACT,
   START_WITH,
   ENDS_WITH,
-  CONTAINS
+  CONTAINS,
 }
 
 export default OptionsPatternString;

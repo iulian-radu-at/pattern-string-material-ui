@@ -1,28 +1,31 @@
 import * as React from 'react';
-import FormHelperText from '@material-ui/core/FormHelperText/FormHelperText';
-import Input from '@material-ui/core/Input/Input';
-import InputLabel from '@material-ui/core/InputLabel/InputLabel';
+import FormHelperText from '@mui/material/FormHelperText/FormHelperText';
+import Input from '@mui/material/Input/Input';
+import InputLabel from '@mui/material/InputLabel/InputLabel';
 import OptionsPatternString, { TYPE } from './OptionsPatternString';
-import { Dictionary, isEmpty } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 import { SingleSelect } from 'react-select-material-ui';
 
-const styles: Dictionary<React.CSSProperties> = {
+const styles: Record<string, React.CSSProperties> = {
   checkbox: {
-    padding: '0 5px 0 0'
+    padding: '0 5px 0 0',
   },
   container: {
     alignItems: 'center',
-    display: 'flex'
+    display: 'flex',
   },
   itemLeft: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   itemRight: {
-    flexGrow: 1
-  }
+    flexGrow: 1,
+  },
 };
 
-class PatternStringMaterialUi extends React.Component<PatternStringMaterialUiProps, PatternStringMaterialUiState> {
+class PatternStringMaterialUi extends React.Component<
+  PatternStringMaterialUiProps,
+  PatternStringMaterialUiState
+> {
   constructor(props: PatternStringMaterialUiProps) {
     super(props);
 
@@ -30,7 +33,7 @@ class PatternStringMaterialUi extends React.Component<PatternStringMaterialUiPro
 
     this.state = {
       type,
-      value: props.value || props.defaultValue || ''
+      value: props.value || props.defaultValue || '',
     };
   }
 
@@ -95,7 +98,7 @@ class PatternStringMaterialUi extends React.Component<PatternStringMaterialUiPro
 
     if (this.props.type === undefined) {
       this.setState({
-        type
+        type,
       });
     }
 
@@ -107,7 +110,7 @@ class PatternStringMaterialUi extends React.Component<PatternStringMaterialUiPro
 
     if (this.props.value === undefined) {
       this.setState({
-        value
+        value,
       });
     }
 

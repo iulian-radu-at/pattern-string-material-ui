@@ -1,9 +1,9 @@
-import PatternStringMaterialUi, { TYPE } from '../src/PatternStringMaterialUi';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import PatternStringMaterialUi, { TYPE } from '../src/PatternStringMaterialUi';
 
 const style: React.CSSProperties = {
-  height: 20
+  height: 20,
 };
 
 const doNothing = (type?: TYPE, value?: string) => {};
@@ -26,39 +26,61 @@ const type2text = (type?: TYPE) => {
 };
 
 const showSelectedValue = (id: string) => (type?: TYPE, value?: string) =>
-  (document.getElementById(id).textContent = `${type2text(type)} ${value}`);
+  (document.getElementById(id)!.textContent = `${type2text(type)} ${value}`);
 
-storiesOf('PatternStringMaterialUi', module)
-  .addParameters({ options: { showPanel: false } })
-  .add('the minimal component', () => (
-    <div>
-      <PatternStringMaterialUi onChange={doNothing} />
-    </div>
-  ))
-  .add('with label', () => (
-    <div>
-      <PatternStringMaterialUi label="Filename" onChange={doNothing} />
-    </div>
-  ))
-  .add('with helper text', () => (
+export default {
+  title: 'PatternStringMaterialUi',
+  component: PatternStringMaterialUi,
+} as ComponentMeta<typeof PatternStringMaterialUi>;
+
+export const TheMinimalComponent: ComponentStory<
+  typeof PatternStringMaterialUi
+> = () => (
+  <div>
+    <PatternStringMaterialUi onChange={doNothing} />
+  </div>
+);
+
+export const WithLabel: ComponentStory<typeof PatternStringMaterialUi> = () => (
+  <div>
+    <PatternStringMaterialUi label="Filename" onChange={doNothing} />
+  </div>
+);
+
+export const WithHelperText: ComponentStory<typeof PatternStringMaterialUi> =
+  () => (
     <div>
       <PatternStringMaterialUi
         helperText="Please select a type and a value (except for 'can be any')"
         onChange={doNothing}
       />
     </div>
-  ))
-  .add('with an initial type and value', () => (
-    <div>
-      <PatternStringMaterialUi defaultType={TYPE.ENDS_WITH} defaultValue=".pdf" onChange={showSelectedValue('itv')} />
-      <div style={style} />
-      Selected value: <span id="itv" />
-    </div>
-  ))
-  .add('with fixed type and value', () => (
-    <div>
-      <PatternStringMaterialUi type={TYPE.ENDS_WITH} value=".pdf" onChange={showSelectedValue('ftv')} />
-      <div style={style} />
-      Selected value: <span id="ftv" />
-    </div>
-  ));
+  );
+
+export const WithAnInitialTypeAndValue: ComponentStory<
+  typeof PatternStringMaterialUi
+> = () => (
+  <div>
+    <PatternStringMaterialUi
+      defaultType={TYPE.ENDS_WITH}
+      defaultValue=".pdf"
+      onChange={showSelectedValue('itv')}
+    />
+    <div style={style} />
+    Selected value: <span id="itv" />
+  </div>
+);
+
+export const WithFixedTypeAndValue: ComponentStory<
+  typeof PatternStringMaterialUi
+> = () => (
+  <div>
+    <PatternStringMaterialUi
+      type={TYPE.ENDS_WITH}
+      value=".pdf"
+      onChange={showSelectedValue('ftv')}
+    />
+    <div style={style} />
+    Selected value: <span id="ftv" />
+  </div>
+);

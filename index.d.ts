@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from 'react';
 
-export interface PatternStringMaterialUiProps extends React.Props<PatternStringMaterialUi> {
+export interface PatternStringMaterialUiProps {
   helperText?: string;
   label?: string;
   onChange: (type?: TYPE, value?: string) => void;
@@ -11,15 +11,14 @@ export interface PatternStringMaterialUiProps extends React.Props<PatternStringM
 
 declare class PatternStringMaterialUi extends React.Component<PatternStringMaterialUiProps> {}
 
-declare module "pattern-string-material-ui" {
-}
+declare module 'pattern-string-material-ui' {}
 
 export enum TYPE {
   CAN_BE_ANY,
   IS_EXACT,
   START_WITH,
   ENDS_WITH,
-  CONTAINS
+  CONTAINS,
 }
 
 export default PatternStringMaterialUi;
