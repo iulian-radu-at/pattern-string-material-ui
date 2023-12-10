@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import PatternStringMaterialUi, { TYPE } from '../src/PatternStringMaterialUi';
 
@@ -28,38 +28,35 @@ const type2text = (type?: TYPE) => {
 const showSelectedValue = (id: string) => (type?: TYPE, value?: string) =>
   (document.getElementById(id)!.textContent = `${type2text(type)} ${value}`);
 
-export default {
+const meta: Meta<typeof PatternStringMaterialUi> = {
   title: 'PatternStringMaterialUi',
   component: PatternStringMaterialUi,
-} as ComponentMeta<typeof PatternStringMaterialUi>;
+} as Meta<typeof PatternStringMaterialUi>;
+export default meta;
+type Story = StoryObj<typeof PatternStringMaterialUi>;
 
-export const TheMinimalComponent: ComponentStory<
-  typeof PatternStringMaterialUi
-> = () => (
+export const TheMinimalComponent = () => (
   <div>
     <PatternStringMaterialUi onChange={doNothing} />
   </div>
 );
 
-export const WithLabel: ComponentStory<typeof PatternStringMaterialUi> = () => (
+export const WithLabel = () => (
   <div>
     <PatternStringMaterialUi label="Filename" onChange={doNothing} />
   </div>
 );
 
-export const WithHelperText: ComponentStory<typeof PatternStringMaterialUi> =
-  () => (
-    <div>
-      <PatternStringMaterialUi
-        helperText="Please select a type and a value (except for 'can be any')"
-        onChange={doNothing}
-      />
-    </div>
-  );
+export const WithHelperText = () => (
+  <div>
+    <PatternStringMaterialUi
+      helperText="Please select a type and a value (except for 'can be any')"
+      onChange={doNothing}
+    />
+  </div>
+);
 
-export const WithAnInitialTypeAndValue: ComponentStory<
-  typeof PatternStringMaterialUi
-> = () => (
+export const WithAnInitialTypeAndValue = () => (
   <div>
     <PatternStringMaterialUi
       defaultType={TYPE.ENDS_WITH}
@@ -71,9 +68,7 @@ export const WithAnInitialTypeAndValue: ComponentStory<
   </div>
 );
 
-export const WithFixedTypeAndValue: ComponentStory<
-  typeof PatternStringMaterialUi
-> = () => (
+export const WithFixedTypeAndValue = () => (
   <div>
     <PatternStringMaterialUi
       type={TYPE.ENDS_WITH}

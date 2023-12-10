@@ -1,15 +1,13 @@
-import * as React from 'react';
 import FormHelperText from '@mui/material/FormHelperText/FormHelperText';
 import Input from '@mui/material/Input/Input';
 import InputLabel from '@mui/material/InputLabel/InputLabel';
-import OptionsPatternString, { TYPE } from './OptionsPatternString';
 import isEmpty from 'lodash/isEmpty';
+import React from 'react';
 import { SingleSelect } from 'react-select-material-ui';
+import OptionsPatternString, { TYPE } from './OptionsPatternString';
+import { SxProps } from '@mui/material';
 
 const styles: Record<string, React.CSSProperties> = {
-  checkbox: {
-    padding: '0 5px 0 0',
-  },
   container: {
     alignItems: 'center',
     display: 'flex',
@@ -19,6 +17,16 @@ const styles: Record<string, React.CSSProperties> = {
   },
   itemRight: {
     flexGrow: 1,
+    height: '1rem',
+    paddingLeft: 4,
+  },
+};
+
+const sxSingleSelect: SxProps = {
+  '& [data-value]': {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
   },
 };
 
@@ -66,6 +74,7 @@ class PatternStringMaterialUi extends React.Component<
         value={OptionsPatternString.getOption(this.state.type)}
         options={OptionsPatternString.getOptions()}
         onChange={this.handleChangePattern}
+        sx={sxSingleSelect}
       />
     );
   }
